@@ -114,6 +114,24 @@ const Home = () => {
         </ul>
       </section>
 
+            {/* Section 3: Plant Care Tip of the Day */}
+      <section className="py-12 bg-yellow-100 dark:bg-green-900 px-4 mx-5 mt-10 rounded-xl ">
+        <h2 className="text-4xl font-bold text-center mb-4 text-gray-800 dark:text-gray-100">🌞 Plant Care Tip of the Day</h2>
+        <div className="max-w-3xl mx-auto bg-white dark:bg-gray-800 rounded-lg p-6 shadow-lg">
+          <p className="text-lg text-gray-700 dark:text-gray-300 text-center">
+            {
+              [
+                "Rotate your plants every few weeks for even growth.",
+                "Check soil moisture before watering – overwatering is a common mistake.",
+                "Dust leaves regularly to help your plants photosynthesize better.",
+                "Use a well-draining soil mix for your potted plants.",
+                "Group plants with similar humidity needs together for a happy environment."
+              ][Math.floor(Math.random() * 5)]
+            }
+          </p>
+        </div>
+      </section>
+
       {/* Section 2: Beginner-Friendly Plants */}
       <section className="py-12 px-4 max-w-7xl mx-auto">
         <h2 className="text-4xl font-bold text-center mb-8">Beginner-Friendly Plants</h2>
@@ -138,6 +156,7 @@ const Home = () => {
           </div>
         </div>
       </section>
+
     </div>
   );
 };

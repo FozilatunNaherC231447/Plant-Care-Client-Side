@@ -1,4 +1,3 @@
-
 import { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../context/AuthContext';
@@ -23,7 +22,8 @@ const Navbar = () => {
   };
 
   return (
-    <nav className={`p-4 lg:px-20 lg:py-6 flex justify-between items-center relative ${theme === 'dark' ? 'bg-gray-900 text-white' : 'bg-green-800 text-white'}`}>
+    <nav className={`p-4 lg:px-20 lg:py-6 flex justify-between items-center sticky top-0 z-50 shadow-2xl ${theme === 'dark' ? 'bg-gray-900 text-white' : 'bg-green-800 text-white'}`}>
+
       {/* Logo + Brand */}
       <Link to="/" className="flex items-center space-x-2">
         <img src={logo} alt="PlantCare Logo" className="w-10 h-10 rounded-3xl" />
@@ -43,11 +43,13 @@ const Navbar = () => {
       >
         <Link to="/" onClick={() => setIsOpen(false)} className="py-1">Home</Link>
         <Link to="/all-plants" onClick={() => setIsOpen(false)} className="py-1">All Plants</Link>
+        <Link to="/about" onClick={() => setIsOpen(false)} className="py-1">About Us</Link> 
 
         {user && (
           <>
             <Link to="/add-plant" onClick={() => setIsOpen(false)} className="py-1">Add Plant</Link>
             <Link to="/my-plants" onClick={() => setIsOpen(false)} className="py-1">My Plants</Link>
+            <Link to="/dashboard" onClick={() => setIsOpen(false)} className="py-1">Dashboard</Link> {/* ✅ New Dashboard Link */}
           </>
         )}
 

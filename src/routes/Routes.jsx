@@ -10,6 +10,7 @@ import MyPlants from '../pages/MyPlants';
 import UpdatePlant from '../pages/UpdatePlant';
 import NotFound from '../pages/NotFound';
 import PrivateRoute from './PrivateRoute';
+import Dashboard from '../pages/Dashboard';
 
 export const router = createBrowserRouter([
   {
@@ -19,12 +20,14 @@ export const router = createBrowserRouter([
     children: [
       { path: '/', element: <Home /> },
       { path: '/login', element: <Login /> },
+       { path: '/about', element: <NotFound /> },
       { path: '/register', element: <Register /> },
       { path: '/add-plant', element: <PrivateRoute><AddPlant /></PrivateRoute> },
       { path: '/all-plants', element: <AllPlants /> },
       { path: '/my-plants', element: <PrivateRoute><MyPlants /></PrivateRoute> },
       { path: '/plant/:id', element: <PrivateRoute><PlantDetails /></PrivateRoute> },
       { path: '/update-plant/:id', element: <PrivateRoute><UpdatePlant /></PrivateRoute> },
+      { path: '/dashboard', element: <PrivateRoute><Dashboard /></PrivateRoute> },
     ]
   }
 ]);
